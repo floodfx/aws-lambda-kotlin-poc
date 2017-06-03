@@ -1,11 +1,11 @@
 #!/bin/bash
 
 PROFILE=default
-LAMBDA_NAME="kotlin-lambda-poc2"
+LAMBDA_NAME="kotlin-lambda-poc"
 HANDLER="com.floodfx.kotlin.lambda.App::handleRequest"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPT_DIR=$SCRIPT_DIR/../../scripts
-ZIP_PATH="$SCRIPT_DIR/../build/distributions/kotlin-lambda-poc.zip"
+ZIP_PATH="$SCRIPT_DIR/../build/distributions/$LAMBDA_NAME.zip"
 
 STAGE=$1
 if [ -z "$STAGE" ]; then

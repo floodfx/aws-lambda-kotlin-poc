@@ -1,11 +1,11 @@
 #!/bin/bash
 
-LAMBDA_NAME="kotlin-lambda-poc2"
+LAMBDA_NAME="kotlin-lambda-poc"
 DESCRIPTION="Kotlin Proof of Concept"
-GATEWAY_PATH="kotlin-lambda-poc2"
+GATEWAY_PATH="kotlin-lambda-poc"
 HANDLER="com.floodfx.kotlin.lambda.App::handleRequest"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ZIP_PATH="$SCRIPT_DIR/../../build/distributions/kotlin-lambda-poc.zip"
+ZIP_PATH="$SCRIPT_DIR/../../build/distributions/$LAMBDA_NAME.zip"
 SCRIPT_DIR=$SCRIPT_DIR/../../scripts
 
 ACCOUNT_ID=$1
