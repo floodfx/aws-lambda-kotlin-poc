@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 LAMBDA_NAME="kotlin-lambda-poc"
 DESCRIPTION="Kotlin Proof of Concept"
@@ -24,7 +24,8 @@ VERSION=$STAGE
 $SCRIPT_DIR/create-iam-role.sh $LAMBDA_NAME $STAGE
 
 # build
-$SCRIPT_DIR/../gradlew build
+cd $SCRIPT_DIR/..
+gradle build
 
 # create lambda function
 FUNCTION_VERSION=$($SCRIPT_DIR/create-lambda.sh $ACCOUNT_ID $LAMBDA_NAME $ZIP_PATH $HANDLER $STAGE)

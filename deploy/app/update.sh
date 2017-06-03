@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 PROFILE=default
 LAMBDA_NAME="kotlin-lambda-poc"
@@ -12,7 +12,8 @@ if [ -z "$STAGE" ]; then
   STAGE='dev'
 fi
 
-$SCRIPT_DIR/../gradlew build
+cd $SCRIPT_DIR/..
+gradle build
 
 aws lambda update-function-configuration \
   --function $LAMBDA_NAME-$STAGE \
