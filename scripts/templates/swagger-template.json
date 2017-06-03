@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "VERSION",
+    "title": "LAMBDA_NAME"
+  },
+  "paths": {
+    "PATH/{proxy+}": {
+      "x-amazon-apigateway-any-method": {
+        "description": "DESCRIPTION",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {},
+        "parameters": [],
+        "x-amazon-apigateway-integration": {
+          "type": "aws_proxy",
+          "uri": "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:ACCOUNT_ID:function:LAMBDA_NAME:STAGE/invocations",
+          "httpMethod": "POST",
+          "passthroughBehavior": "when_no_match"
+        }
+      }
+    }
+  }
+}
