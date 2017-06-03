@@ -21,7 +21,7 @@ fi
 
 
 aws lambda create-alias \
-  --function-name $LAMBDA_NAME-$STAGE \
+  --function-name "$LAMBDA_NAME-$STAGE" \
   --name $STAGE \
   --function-version $VERSION \
   --profile $PROFILE
